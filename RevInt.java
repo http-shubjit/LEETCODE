@@ -1,7 +1,6 @@
-
+//Reverse Integer
 // Input: x = 123
 // Output: 321
-
 public class RevInt {
     public static void main(String[] args) {
         int x = 123;
