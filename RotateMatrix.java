@@ -57,3 +57,10 @@ public static int[][] rotateMatrix(int[][] matrix, int n) {
     }
     
 }
+
+
+//formula:
+//swap1: top-left <-> top-right
+//swap2: top-left <-> bottom-right
+//swap3: top-left <-> bottom-left
+
