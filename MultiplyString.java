@@ -1,11 +1,16 @@
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class MultiplyString {
 
     public static String multiply(String num1, String num2) {
-        
-        return Integer.toString(Integer.parseInt(num1)*Integer.parseInt(num2));
+        BigInteger bigNum1 = new BigInteger(num1);
 
+        BigInteger bigNum2 = new BigInteger(num2);
+
+        BigInteger result = bigNum1.multiply(bigNum2);
+
+        return result.toString();
     }
 
     public static void main(String[] args) {
