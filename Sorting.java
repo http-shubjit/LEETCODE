@@ -60,13 +60,53 @@ class InsertionSort {
 }
 
 class QuickSort {
-
-    public void Sort(int[] arr) {
-        
-    }
-
+    public int[] Sort(int[] arr,int s,int e) {
+        if (s < e) {
+            int p = partiton(arr, s, e);
+            Sort(arr, s, p-1);
+            Sort(arr, p + 1, e);
+   }
+        return arr;
+    
 
 }
+
+private int partiton(int[] arr, int s, int e) {
+    int p = arr[s];
+int i=s+1;
+int j=e;
+
+while (i <= j) {
+
+    while (i <= e && arr[i] <= p) {
+        i++;
+
+    }
+
+    while (arr[j] > p) {
+        j--;
+
+    }
+    if (i < j)
+        swap(arr, i, j);
+
+}
+swap(arr, s, j);
+return j;
+    }
+
+private void swap(int[] arr, int i, int j) {
+    int temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+}
+    }
+    
+   
+
+
+
+
 
 class MergeSort {
 
@@ -106,11 +146,14 @@ public class Sorting {
         // for (int i = 0; i < sortselection.length; i++) {
         //     System.out.println(sortselection[i]);
         // }
-        int[] sortinser = insertionsort.Sort(arr);
-        for (int i = 0; i < sortinser.length; i++) {
-        System.out.println(sortinser[i]);
-        }
-        // quicksort.Sort(arr);
+        // int[] sortinser = insertionsort.Sort(arr);
+        // for (int i = 0; i < sortinser.length; i++) {
+        // System.out.println(sortinser[i]);
+        // }
+       int[] sortquick=  quicksort.Sort(arr, 0, arr.length - 1);
+       for (int i = 0; i < sortquick.length; i++) {
+       System.out.println(sortquick[i]);
+       } 
         // mergesort.Sort(arr);
 
 }
