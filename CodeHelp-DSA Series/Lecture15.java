@@ -56,62 +56,108 @@
 
 
 
-/**
- * Lecture15
- */
-public class Lecture15 {
 
-    public static void main(String[] args) {
+// public class Lecture15 {
+
+//     public static void main(String[] args) {
         
-        int[] times = { 5, 5, 5, 5 };
-        int painter = 2;
-        int start = 0;
-        int end = 0;
-        for (int i = 0; i < times.length; i++) {
-            end += times[i];
-        }
-        int mid;
-        int ans=-1;
-        while (start <= end) {
-            mid = (start + end) / 2;
-            if (isPossible(times, mid, painter)) {
-                {
-                    ans = mid;
-                    end = mid - 1;
-                }} 
-            else
-                start = mid + 1;
-        }
-System.out.println(ans);
-    }
+//         int[] times = { 5, 5, 5, 5 };
+//         int painter = 2;
+//         int start = 0;
+//         int end = 0;
+//         for (int i = 0; i < times.length; i++) {
+//             end += times[i];
+//         }
+//         int mid;
+//         int ans=-1;
+//         while (start <= end) {
+//             mid = (start + end) / 2;
+//             if (isPossible(times, mid, painter)) {
+//                 {
+//                     ans = mid;
+//                     end = mid - 1;
+//                 }} 
+//             else
+//                 start = mid + 1;
+//         }
+// System.out.println(ans);
+//     }
 
-    private static boolean isPossible(int[] times, int mid, int painter) {
-        int painterCounter = 1;
-        int minimumTime = 0;
-        for (int i = 0; i < times.length; i++) {
-            minimumTime += times[i];
+//     private static boolean isPossible(int[] times, int mid, int painter) {
+//         int painterCounter = 1;
+//         int minimumTime = 0;
+//         for (int i = 0; i < times.length; i++) {
+//             minimumTime += times[i];
 
-            if (minimumTime > mid) {
-                painterCounter++;
-                if (painterCounter > painter)
-                    return false;
-                minimumTime = times[i];
+//             if (minimumTime > mid) {
+//                 painterCounter++;
+//                 if (painterCounter > painter)
+//                     return false;
+//                 minimumTime = times[i];
+//             }
+
+//             // if (minimumTime + times[i] <= mid) {
+//             //     minimumTime += times[i];
+//             // }
+//             // else
+//             // {
+//             //     painterCounter++;
+//             //     if(painterCounter>painter || times[i]>mid)
+//             //         return false;
+//             //     minimumTime = times[i];
+//             // }
+
+//         }
+//         return true;
+
+//     }
+
+// }
+
+//**Aggressive Cows Problem**/
+
+import java.util.Arrays;
+
+public class Lecture15 {
+    public static void main(String[] args) {
+        int s = 0;
+        int[] stall = { 4,2,1,3,6 };
+        int cows=2;
+        Arrays.sort(stall);
+        int sum = 0;
+        for (int i = 0; i < stall.length; i++) {
+            sum += stall[i];
+        }
+        int e = sum;
+        int mid = (s + e) / 2;
+        int ans = -1;
+        while (s <= e) {
+            mid = (s + e) / 2;
+            if (isPossible(stall, cows, mid)) {
+                ans = mid;
+                s = mid + 1;
             }
+          else
+              e = mid - 1; 
+}
+System.out.println(ans);
 
-            // if (minimumTime + times[i] <= mid) {
-            //     minimumTime += times[i];
-            // }
-            // else
-            // {
-            //     painterCounter++;
-            //     if(painterCounter>painter || times[i]>mid)
-            //         return false;
-            //     minimumTime = times[i];
-            // }
+}
 
+private static boolean isPossible(int[] stall, int cows, int mid) {
+    int cowsCount = 1;
+    int maxStall = stall[0];
+    for (int i = 0; i < stall.length; i++) {
+        if (stall[i] - maxStall >= mid) {
+            cowsCount++;
+            if (cowsCount == cows)
+                return true;
         }
-        return true;
 
     }
+    return false; 
+        
 
+    }
+    
 }
