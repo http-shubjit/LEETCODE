@@ -116,48 +116,48 @@
 
 //**Aggressive Cows Problem**/
 
-import java.util.Arrays;
+// import java.util.Arrays;
 
-public class Lecture15 {
-    public static void main(String[] args) {
-        int s = 0;
-        int[] stall = { 4,2,1,3,6 };
-        int cows=2;
-        Arrays.sort(stall);
-        int sum = 0;
-        for (int i = 0; i < stall.length; i++) {
-            sum += stall[i];
-        }
-        int e = sum;
-        int mid = (s + e) / 2;
-        int ans = -1;
-        while (s <= e) {
-            mid = (s + e) / 2;
-            if (isPossible(stall, cows, mid)) {
-                ans = mid;
-                s = mid + 1;
-            }
-          else
-              e = mid - 1; 
-}
-System.out.println(ans);
+// public class Lecture15 {
+//     public static void main(String[] args) {
+//         int s = 0;
+//         int[] stall = { 4,2,1,3,6 };
+//         int cows=2;
+//         Arrays.sort(stall);
+//         int sum = 0;
+//         for (int i = 0; i < stall.length; i++) {
+//             sum += stall[i];
+//         }
+//         int e = sum;
+//         int mid = (s + e) / 2;
+//         int ans = -1;
+//         while (s <= e) {
+//             mid = (s + e) / 2;
+//             if (isPossible(stall, cows, mid)) {
+//                 ans = mid;
+//                 s = mid + 1;
+//             }
+//           else
+//               e = mid - 1; 
+// }
+// System.out.println(ans);
 
-}
+// }
 
-private static boolean isPossible(int[] stall, int cows, int mid) {
-    int cowsCount = 1;
-    int maxStall = stall[0];
-    for (int i = 0; i < stall.length; i++) {
-        if (stall[i] - maxStall >= mid) {
-            cowsCount++;
-            if (cowsCount == cows)
-                return true;
-        }
+// private static boolean isPossible(int[] stall, int cows, int mid) {
+//     int cowsCount = 1;
+//     int maxStall = stall[0];
+//     for (int i = 0; i < stall.length; i++) {
+//         if (stall[i] - maxStall >= mid) {
+//             cowsCount++;
+//             if (cowsCount == cows)
+//                 return true;
+//         }
 
-    }
-    return false; 
+//     }
+//     return false; 
         
 
-    }
+//     }
     
-}
+// }
