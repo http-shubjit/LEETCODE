@@ -140,3 +140,52 @@
         
 //     }
 // }
+
+
+//** 6: Add 2 Array
+
+import java.util.ArrayList;
+
+public class Lecture21 {
+public static void main(String[] args) {
+    int[] arr1 = { 1, 2, 3,4 };
+    int arr1len = arr1.length - 1;
+    int[] arr2 = { 6 };
+    int arr2len = arr2.length - 1;
+
+    int carry=0;
+    ArrayList reslist = new ArrayList<Integer>();
+ 
+    while (arr1len >= 0 && arr2len >= 0) {
+        int val1 = arr1[arr1len];
+        int val2 = arr2[arr2len];
+        int sum = val1 + val2 + carry;
+        carry = sum / 10;
+        int value = sum % 10;
+        reslist.add(value);
+        arr1len--;
+        arr2len--;
+
+    }
+    while (arr1len >= 0) {
+        int sum = arr1[arr1len] + carry;
+        carry = sum / 10;
+        int value = sum % 10;
+        reslist.add(value);
+        arr1len--;
+
+    }
+    while (arr2len >= 0) {
+
+        int sum = arr1[arr2len] + carry;
+        carry = sum / 10;
+        int value = sum % 10;
+        reslist.add(value);
+        arr2len--;
+    }
+for (int i = reslist.size()-1; i >=0 ; i--) {
+    System.out.println(reslist.get(i));
+}    
+}
+    
+}
