@@ -73,3 +73,25 @@
 // }
 
 //** 5: Modular Arithmetics/ Fast Exponentiation
+
+// 3^4=(3^4/2)^2:in even
+// 3^3=(3^3/2)^2*3:in odd;
+
+public class Lecture24 {
+
+    public static void main(String[] args) {
+        int base = 3;
+        int pow = 4;
+        int mod = 10;
+        int res = 1;
+        while (pow > 0) {
+            if ((pow & 1) == 1 ) {
+                res = res * base;
+            }
+            base = base * base;
+            pow = pow / 2;
+
+        }
+        System.out.println(res);
+    }
+}
