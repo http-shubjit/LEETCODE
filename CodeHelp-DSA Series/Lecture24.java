@@ -8,7 +8,7 @@
 //         boolean[] prime = new boolean[n + 1]; 
 //         for (int i = 0; i <prime.length; i++) {
 //             prime[i] = true;
-         
+
 //         }
 //         prime[0] = false;
 //         prime[1]=false;
@@ -29,13 +29,12 @@
 
 //** 2: Sieve Segment for find find above 10^6 
 
-
 //** 3 :Gcd Euclid’s Algo 
 
 // public class Lecture24 {
 
 //     public static void main(String[] args) {
-        
+
 //         int a = 12;
 //         int b = 24;
 //         int res = gcd(a, b);
@@ -59,7 +58,6 @@
 
 //** 4:Lcm
 
-
 // public class Lecture24 {
 
 //     public static void main(String[] args) {
@@ -70,7 +68,7 @@
 //             lcm++;
 //         }
 //         System.out.println(lcm);
-        
+
 //     }
 // }
 
