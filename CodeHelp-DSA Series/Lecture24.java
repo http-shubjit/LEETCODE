@@ -77,18 +77,23 @@
 // 3^4=(3^4/2)^2:in even
 // 3^3=(3^3/2)^2*3:in odd;
 
+// we can write both odd(x^n/2)^2*x and even(x^n/2)^2) like it, so from both equation (x^n/2)^2 is common so we erite the code in way so that in case of odd we store the value in res variable 
+// and multiply the xwith itself  so it will be increment x time for next iteration and divide the power with 2 then we return the res;
+
 public class Lecture24 {
 
     public static void main(String[] args) {
         int base = 3;
         int pow = 4;
-        int mod = 10;
+        int mod = 5;
         int res = 1;
         while (pow > 0) {
-            if ((pow & 1) == 1 ) {
-                res = res * base;
+            if ((pow & 1) == 1) {
+                res =( res * base%mod)%mod;
             }
-            base = base * base;
+           System.out.println(res);
+            base = (base%mod * base%mod)%mod;
+        System.out.println(base);
             pow = pow / 2;
 
         }
