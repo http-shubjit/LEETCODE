@@ -44,23 +44,49 @@
 //** 3: print 0-n ussing recurssion
 
 
-public class Lecture31 {
-    public static void main(String[] args) {
+// public class Lecture31 {
+//     public static void main(String[] args) {
     
-        int n = 5;
-        print(n);
-}
+//         int n = 5;
+//         print(n);
+// }
 
-private static void print(int n) {
-        if(n<0)
-        return;
-        else
-        {
-        System.out.println(n);
-        n--;
-        print(n);
-        }   
+// private static void print(int n) {
+//         if(n<0)
+//         return;
+//         else
+//         {
+//         System.out.println(n);
+//         n--;
+//         print(n);
+//         }   
         
-    }
+//     }
     
-}
+// }
+
+//**  4: Reach at home
+
+
+// public class Lecture31 {
+
+//   public static void main(String[] args) {
+//       int src = 0;
+//       int dest = 10;
+//       reachHome(src, dest);
+//   }
+
+//   private static void reachHome(int src, int dest) {
+//    if(src==dest)
+//        return;
+// else
+// {
+//     src++;
+//     System.out.println("km is :" + src);
+//     reachHome(src, dest);
+  
+// }
+    
+// }  
+// }
+
