@@ -6,7 +6,7 @@
 //         int n=5;
 //         int res = factorial(n);
 //         System.out.println(res);
-    
+
 //   }
 
 //   private static int factorial(int n) {
@@ -14,39 +14,35 @@
 //         return 1;
 //         return n * factorial(n - 1);
 
-        
 //     }
-    
+
 // }
 
-
 //** 2: x^n
-
 
 // public class Lecture31 {
 
 //     public static void main(String[] args) {
-        
+
 //         int res = square(5, 3);
 //         System.out.println(res);
-        
+
 //     }
 
 //     private static int square(int x, int n) {
-        
+
 //         if(n==0)
 //             return 1;
-        
+
 //         return x * square(x, n - 1);
 //     }
 // }
 
 //** 3: print 0-n ussing recurssion
 
-
 // public class Lecture31 {
 //     public static void main(String[] args) {
-    
+
 //         int n = 5;
 //         print(n);
 // }
@@ -60,13 +56,12 @@
 //         n--;
 //         print(n);
 //         }   
-        
+
 //     }
-    
+
 // }
 
 //**  4: Reach at home
-
 
 // public class Lecture31 {
 
@@ -84,9 +79,34 @@
 //     src++;
 //     System.out.println("km is :" + src);
 //     reachHome(src, dest);
-  
+
 // }
-    
+
 // }  
 // }
 
+
+//** Fibonacci series 
+
+
+public class Lecture31 {
+
+    public static void main(String[] args) {
+        
+        int nthTerm = 5;
+        int num = fibonacci(nthTerm);
+        System.out.println(num);
+    }
+
+    private static int fibonacci(int n) {
+        
+        if(n==0)
+        return n ;
+       if(n==1)
+        return 1;
+    int res = fibonacci(n - 1) + fibonacci(n - 2);
+    System.out.println(res);
+    return res;
+
+    }
+}
