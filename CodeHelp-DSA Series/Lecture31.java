@@ -85,21 +85,19 @@
 // }  
 // }
 
-
 //** Fibonacci series 
-
 
 // public class Lecture31 {
 
 //     public static void main(String[] args) {
-        
+
 //         int nthTerm = 5;
 //         int num = fibonacci(nthTerm);
 //         System.out.println(num);
 //     }
 
 //     private static int fibonacci(int n) {
-        
+
 //         if(n==0)
 //         return n ;
 //        if(n==1)
@@ -111,9 +109,7 @@
 //     }
 // }
 
-
 //** Find a array is sorted or not using recurssion
-
 
 // public class Lecture31 {
 
@@ -122,7 +118,7 @@
 //         int len = arr.length - 1;
 //         boolean res = isSorted(arr,  len);
 //         System.out.println(res);
-        
+
 //     }
 
 //     private static boolean isSorted(int[] arr, int len) {
@@ -139,7 +135,6 @@
 
 //** array sum using recurssion
 
-
 // public class Lecture31 {
 // public static void main(String[] args) {
 //     int[] arr = { 1, 2, 4, 5, 6 };
@@ -155,7 +150,7 @@
 // return ( arr[len - 1]+getSum(arr, len-1) );
 
 // }
-    
+
 // }
 
 //** find elemment using recurssion
@@ -168,18 +163,90 @@
 //         int len = 5;
 //         boolean res = searchKey(arr, key, len);
 //         System.out.println(res);
-        
+
 //     }
 
 //     private static boolean searchKey(int[] arr, int key, int len) {
-       
+
 //         if (len <= 0)
 //             return false;
 //         if(key==arr[len-1])
 //             return true;
 //         else
 //             return searchKey(arr, key, len - 1);
-        
+
 //     }
-    
+
 // }
+
+//** Binary search Using Recurssion
+
+// public class Lecture31 {
+
+//     public static void main(String[] args) {
+//     int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8 };
+//     int s=0;
+//     int e = arr.length-1;
+//     int key = 1;
+//     boolean res = isFound(arr, s,  e, key);
+//        System.out.println(res);
+//    }
+
+//    private static boolean isFound(int[] arr, int s, int e,int key) {
+//        int m = (s + e) / 2;
+//        if (s > e)
+//         return false;
+//        if(arr[m]==key)
+//            return true;
+//        if(arr[m]<key)
+//        {
+//         s=m+1;
+//        return isFound(arr, s, e, key);
+//        }
+//        else if(arr[m]>key)
+//        {
+//            e = m - 1;
+//            return isFound(arr, s, e, key);
+//        }
+//       else
+//           return false;
+
+//     } 
+// }
+
+
+
+//**  reverse a string using recursion
+
+public class Lecture31 {
+
+    public static void main(String[] args) {
+        String string = "shubhajit";
+        String[] arrStrings = string.split("");
+        int start = 0;
+        int end = arrStrings.length-1;
+    
+        String ans = reverseString(arrStrings, start, end);
+        System.out.println(ans);    
+    }
+
+    private static String reverseString(String[] arrStrings, int start, int end) {
+        
+        if (start > end)
+        {
+       
+        return String.join("",arrStrings);
+        
+    }
+        else {
+            String temp = arrStrings[start];
+            arrStrings[start] = arrStrings[end];
+            arrStrings[end] = temp;
+            start++;
+            end--;
+            return reverseString(arrStrings, start, end);
+
+        }
+    }
+    
+}
