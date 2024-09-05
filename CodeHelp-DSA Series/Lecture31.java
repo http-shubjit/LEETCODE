@@ -136,3 +136,24 @@
 
 //     }
 // }
+
+//** array sum using recurssion
+
+
+public class Lecture31 {
+public static void main(String[] args) {
+    int[] arr = { 1, 2, 4, 5, 6 };
+    int len = arr.length ;
+    int res = getSum(arr,  len);
+    System.out.println(res);
+}
+
+private static int getSum(int[] arr, int len) {
+
+if(len<=0)
+return 0;
+return ( arr[len - 1]+getSum(arr, len-1) );
+
+}
+    
+}
