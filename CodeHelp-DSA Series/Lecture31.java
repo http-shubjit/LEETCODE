@@ -215,38 +215,35 @@
 // }
 
 
-
 //**  reverse a string using recursion
 
-public class Lecture31 {
+// public class Lecture31 {
 
-    public static void main(String[] args) {
-        String string = "shubhajit";
-        String[] arrStrings = string.split("");
-        int start = 0;
-        int end = arrStrings.length-1;
-    
-        String ans = reverseString(arrStrings, start, end);
-        System.out.println(ans);    
-    }
+//     public static void main(String[] args) {
+//         String string = "shubhajit";
+//         String[] arrStrings = string.split("");
+//         int start = 0;
+//         int end = arrStrings.length - 1;
 
-    private static String reverseString(String[] arrStrings, int start, int end) {
-        
-        if (start > end)
-        {
-       
-        return String.join("",arrStrings);
-        
-    }
-        else {
-            String temp = arrStrings[start];
-            arrStrings[start] = arrStrings[end];
-            arrStrings[end] = temp;
-            start++;
-            end--;
-            return reverseString(arrStrings, start, end);
+//         String ans = reverseString(arrStrings, start, end);
+//         System.out.println(ans);
+//     }
 
-        }
-    }
-    
-}
+//     private static String reverseString(String[] arrStrings, int start, int end) {
+
+//         if (start > end) {
+
+//             return String.join("", arrStrings);
+
+//         } else {
+//             String temp = arrStrings[start];
+//             arrStrings[start] = arrStrings[end];
+//             arrStrings[end] = temp;
+//             start++;
+//             end--;
+//             return reverseString(arrStrings, start, end);
+
+//         }
+//     }
+
+// }
