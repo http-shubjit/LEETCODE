@@ -89,24 +89,50 @@
 //** Fibonacci series 
 
 
-public class Lecture31 {
+// public class Lecture31 {
 
-    public static void main(String[] args) {
+//     public static void main(String[] args) {
         
-        int nthTerm = 5;
-        int num = fibonacci(nthTerm);
-        System.out.println(num);
-    }
+//         int nthTerm = 5;
+//         int num = fibonacci(nthTerm);
+//         System.out.println(num);
+//     }
 
-    private static int fibonacci(int n) {
+//     private static int fibonacci(int n) {
         
-        if(n==0)
-        return n ;
-       if(n==1)
-        return 1;
-    int res = fibonacci(n - 1) + fibonacci(n - 2);
-    System.out.println(res);
-    return res;
+//         if(n==0)
+//         return n ;
+//        if(n==1)
+//         return 1;
+//     int res = fibonacci(n - 1) + fibonacci(n - 2);
+//     System.out.println(res);
+//     return res;
 
-    }
-}
+//     }
+// }
+
+
+//** Find a array is sorted or not using recurssion
+
+
+// public class Lecture31 {
+
+//     public static void main(String[] args) {
+//         int[] arr = { 1, 2, 3, 4, 5};
+//         int len = arr.length - 1;
+//         boolean res = isSorted(arr,  len);
+//         System.out.println(res);
+        
+//     }
+
+//     private static boolean isSorted(int[] arr, int len) {
+// boolean ans=false;   
+// if(len<=0 )
+// return true;
+// if(arr[len]>=arr[len-1] )
+// ans=isSorted(arr, len-1);
+
+// return ans;
+
+//     }
+// }
