@@ -278,3 +278,32 @@
 // }
 
 
+//** Bublesort using recurssion
+
+// public class Lecture31 {
+//     public static void main(String[] args) {
+//         int[] arr = { 2, 1, 3, 5, 4, 0 };
+//         int len = arr.length;
+//         sortedArray(arr, len);
+//         for (int i = 0; i < arr.length; i++) {
+//             System.out.println(arr[i]);
+//         }
+
+//     }
+
+//     private static void sortedArray(int[] arr, int len) {
+//         if (len == 0 || len == 1)
+//             return;
+//         for (int i = 0; i < len - 1; i++) {
+//             if (arr[i] > arr[i + 1]) {
+//                 int temp = arr[i + 1];
+//                 arr[i + 1] = arr[i];
+//                 arr[i] = temp;
+//             }
+//         }
+
+//         sortedArray(arr, len - 1);
+
+//     }
+
+// }
