@@ -83,17 +83,16 @@
 public class Lecture24 {
 
     public static void main(String[] args) {
-        int base = 3;
-        int pow = 4;
+        int base = 5;
+        int pow = 2;
         int mod = 5;
         int res = 1;
         while (pow > 0) {
+            //for odd
             if ((pow & 1) == 1) {
-                res =( res * base%mod)%mod;
+                res =( res * base);
             }
-           System.out.println(res);
-            base = (base%mod * base%mod)%mod;
-        System.out.println(base);
+            base = (base * base);
             pow = pow / 2;
 
         }

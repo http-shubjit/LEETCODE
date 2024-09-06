@@ -214,7 +214,6 @@
 //     } 
 // }
 
-
 //**  reverse a string using recursion
 
 // public class Lecture31 {
@@ -247,3 +246,35 @@
 //     }
 
 // }
+
+
+//** power of a number(x^n);
+
+// public class Lecture31 {
+
+//     public static void main(String[] args) {
+//         int base = 2;
+//         int pow = 4;
+//         int res = square(base, pow);
+//         System.out.println(res);
+
+        
+//     }
+
+//     private static int square(int base, int pow) {
+//        if(pow==0)
+//            return 1;
+//         if(pow ==1)
+//             return base;
+
+//     int ans = square(base, pow/2);
+        
+// if(pow%2 == 0)
+//    return ans * ans;
+// else
+//     return ans*ans*base;
+
+//     }
+// }
+
+
