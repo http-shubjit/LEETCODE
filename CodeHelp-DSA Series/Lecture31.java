@@ -311,3 +311,71 @@
 
 
 ///** Today Ganesh Puja 
+
+
+//** Powerset of Integer array
+
+// import java.util.ArrayList;
+
+// public class Lecture31 {
+//     public static void main(String[] args) {
+//         int[] arr = { 1, 2, 3 };
+//         int index = 0;
+
+//         ArrayList<ArrayList<Integer>> res = powerset(arr, new ArrayList<>(), new ArrayList<>(), index);
+//         System.out.println(res);
+//     }
+
+//     private static ArrayList<ArrayList<Integer>> powerset(int[] arr, ArrayList<ArrayList<Integer>> ans,
+//             ArrayList<Integer> output, int index) {
+//         // Base case: if index is greater than or equal to the array length
+//         if (index >= arr.length) {
+//             ans.add(new ArrayList<>(output)); // Add a copy of the current subset
+//             return ans;
+//         }
+
+//         // Exclude the current element
+//         powerset(arr, ans, output, index + 1);
+
+//         // Include the current element
+//         int element = arr[index];
+//         output.add(element); // Add the current element to the subset
+//         powerset(arr, ans, output, index + 1); // Recur with the next index
+
+//         // Backtrack: remove the last added element to explore other subsets
+//         output.remove(output.size() - 1);
+
+//         return ans; 
+//     }
+// }
+
+//**  SUbsequence of a string
+
+import java.util.*;
+class GFG {
+
+    static List<String> al = new ArrayList<>();
+
+   
+    public static void main(String[] args)
+    {
+        String s = "abc";
+        findsubsequences(s, ""); // Calling a function
+        System.out.println(al);
+    }
+
+    private static void findsubsequences(String s,
+                                         String ans)
+    {
+        if (s.length() == 0) {
+            al.add(ans);
+            return;
+        }
+
+
+        findsubsequences(s.substring(1), ans + s.charAt(0));
+
+        
+        findsubsequences(s.substring(1), ans);
+    }
+}
