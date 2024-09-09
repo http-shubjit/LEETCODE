@@ -313,6 +313,36 @@
 ///** Today Ganesh Puja 
 
 
+
+
+//** Graphical Representaion of how the code execute
+
+
+// powerset({1, 2, 3}, [], [], 0)        // Start with index 0
+//     ├── powerset({1, 2, 3}, [], [], 1) // Exclude 1
+//     │   ├── powerset({1, 2, 3}, [], [], 2) // Exclude 2
+//     │   │   ├── powerset({1, 2, 3}, [], [], 3) // Exclude 3
+//     │   │   │   └── (Base case: add [] to ans)
+//     │   │   └── powerset({1, 2, 3}, [], [3], 3) // Include 3
+//     │   │       └── (Base case: add [3] to ans)
+//     │   └── powerset({1, 2, 3}, [], [2], 2) // Include 2
+//     │       ├── powerset({1, 2, 3}, [], [2], 3) // Exclude 3
+//     │       │   └── (Base case: add [2] to ans)
+//     │       └── powerset({1, 2, 3}, [], [2, 3], 3) // Include 3
+//     │           └── (Base case: add [2, 3] to ans)
+//     └── powerset({1, 2, 3}, [], [1], 1) // Include 1
+//         ├── powerset({1, 2, 3}, [], [1], 2) // Exclude 2
+//         │   ├── powerset({1, 2, 3}, [], [1], 3) // Exclude 3
+//         │   │   └── (Base case: add [1] to ans)
+//         │   └── powerset({1, 2, 3}, [], [1, 3], 3) // Include 3
+//         │       └── (Base case: add [1, 3] to ans)
+//         └── powerset({1, 2, 3}, [], [1, 2], 2) // Include 2
+//             ├── powerset({1, 2, 3}, [], [1, 2], 3) // Exclude 3
+//             │   └── (Base case: add [1, 2] to ans)
+//             └── powerset({1, 2, 3}, [], [1, 2, 3], 3) // Include 3
+//                 └── (Base case: add [1, 2, 3] to ans)
+
+
 //** Powerset of Integer array
 
 // import java.util.ArrayList;
@@ -351,31 +381,86 @@
 
 //**  SUbsequence of a string
 
-import java.util.*;
-class GFG {
+// import java.util.*;
+// class GFG {
 
-    static List<String> al = new ArrayList<>();
+//     static List<String> al = new ArrayList<>();
 
    
-    public static void main(String[] args)
-    {
-        String s = "abc";
-        findsubsequences(s, ""); // Calling a function
-        System.out.println(al);
-    }
+//     public static void main(String[] args)
+//     {
+//         String s = "abc";
+//         findsubsequences(s, ""); // Calling a function
+//         System.out.println(al);
+//     }
 
-    private static void findsubsequences(String s,
-                                         String ans)
-    {
-        if (s.length() == 0) {
-            al.add(ans);
-            return;
-        }
+//     private static void findsubsequences(String s,
+//                                          String ans)
+//     {
+//         if (s.length() == 0) {
+//             al.add(ans);
+//             return;
+//         }
 
 
-        findsubsequences(s.substring(1), ans + s.charAt(0));
+//         findsubsequences(s.substring(1), ans + s.charAt(0));
 
         
-        findsubsequences(s.substring(1), ans);
-    }
-}
+//         findsubsequences(s.substring(1), ans);
+//     }
+// }
+
+
+
+//** Phone Keypad problem
+
+// import java.util.ArrayList;
+
+// public class Lecture31 {
+
+//     public static void main(String[] args) {
+
+//         String digits = "23";
+
+//         ArrayList ans = new ArrayList<String>();
+//         ArrayList output = new ArrayList<String>();
+//         int index = 0;
+//         String[] mapping = {
+//                 "", // 0
+//                 "", // 1
+//                 "ABC", // 2
+//                 "DEF", // 3
+//                 "GHI", // 4
+//                 "JKL", // 5
+//                 "MNO", // 6
+//                 "PQRS", // 7
+//                 "TUV", // 8
+//                 "WXYZ" // 9
+//         };
+
+//         ArrayList res = new ArrayList<String>();
+//         res = solve(index, digits, ans, mapping, output);
+//         System.out.println(res);      
+//     }
+
+//     private static ArrayList solve(int index, String digits, ArrayList ans, String[] mapping, ArrayList output) {
+       
+//         if(index>=digits.length())
+//         {
+//             ans.add(String.join("", output));
+//             return ans;
+//         }
+    
+//         int numb = digits.charAt(index) - '0';
+//         String value = mapping[numb];
+       
+
+//         for (int i = 0; i < value.length(); i++) {
+//             output.add(value.charAt(i)+"");
+//             solve(index + 1, digits, ans, mapping, output);
+//             output.remove(output.size()-1);
+  
+//         }
+//         return ans;
+//     }
+// }
