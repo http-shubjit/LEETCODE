@@ -464,3 +464,182 @@
 //         return ans;
 //     }
 // }
+
+
+//Permutation of a string
+
+
+// import java.util.ArrayList;
+
+// public class Lecture31 {
+
+//     public static void main(String[] args) {
+//         int[] nums = { 1, 2, 3 };
+//         ArrayList<ArrayList<Integer>> res = new ArrayList<>();
+//         solve(nums, 0, new ArrayList<>(), res);
+//         System.out.println(res);
+//     }
+
+//     private static void solve(int[] nums, int index, ArrayList<Integer> current, ArrayList<ArrayList<Integer>> ans) {
+       
+//         if (index == nums.length) {
+//             ans.add(new ArrayList<>(current)); 
+//             return;
+//         }
+
+//         for (int i = index; i < nums.length; i++) {
+//             swap(nums, index, i);
+//             current.add(nums[index]); 
+
+//             solve(nums, index + 1, current, ans);
+
+//             current.remove(current.size() - 1);
+//             swap(nums, index, i); 
+//         }
+//     }
+
+//     private static void swap(int[] nums, int i, int j) {
+//         int temp = nums[i];
+//         nums[i] = nums[j];
+//         nums[j] = temp;
+//     }
+// }
+
+
+//** Uniquepath 
+
+// public class Lecture31 {
+//     static int numberOfPaths(int m, int n) {
+       
+//         int dp[][] = new int[m][n];
+
+        
+//         for (int i = 0; i < m; i++)
+//             dp[i][0] = 1;
+
+      
+//         for (int j = 0; j < n; j++)
+//             dp[0][j] = 1;
+
+        
+//         for (int i = 1; i < m; i++) {
+//             for (int j = 1; j < n; j++)
+
+               
+//                 dp[i][j] = dp[i - 1][j]
+//                         + dp[i][j - 1]; // + dp[i-1][j-1];
+//         }
+//         return dp[m - 1][n - 1];
+//     }
+
+    
+//     public static void main(String args[]) {
+//         System.out.println(numberOfPaths(3, 3));
+//     }
+    
+// }
+
+//** Or
+// public class Lecture31 {
+
+//     static int numberOfPaths(int m, int n) {
+//         // If either given row number is first or
+//         // given column number is first
+//         if (m == 1 || n == 1)
+//             return 1;
+
+       
+//         return numberOfPaths(m - 1, n)
+//                 + numberOfPaths(m, n - 1);
+        
+//     }
+
+//     public static void main(String args[]) {
+//         System.out.println(numberOfPaths(3, 3));
+//     }   
+// }
+
+//** Rat in a Maze Problem
+import java.util.ArrayList;
+import java.util.Vector;
+
+public class Lecture31 {
+
+    public static void main(String[] args) {
+        int[][] maze = {
+                { 1, 0, 0, 0 },
+                { 1, 1, 0, 1 },
+                { 1, 1, 0, 0 },
+                { 0, 1, 1, 1 }
+        };
+
+        int srx = 0; // Start row
+        int sry = 0; // Start column
+
+        Vector<String> ans = new Vector<>();
+        int[][] visited = new int[maze.length][maze[0].length];
+
+        // Check if the starting point is valid
+        if (maze[srx][sry] == 1) {
+            findPath(maze, visited, srx, sry, new ArrayList<String>(), ans);
+        }
+
+        System.out.println(ans);
+    }
+
+    private static void findPath(int[][] maze, int[][] visited, int srx, int sry, ArrayList<String> path,
+            Vector<String> ans) {
+        // Check if we have reached the destination
+        if (srx == (maze.length - 1) && sry == (maze[0].length - 1)) {
+            ans.add(String.join("", path)); // Add the complete path to the answer
+            return;
+        }
+
+        // Mark the cell as visited
+        visited[srx][sry] = 1;
+
+        // For Down
+        int newx = srx + 1;
+        int newy = sry;
+        if (isSafe(newx, newy, visited, maze)) {
+            path.add("D");
+            findPath(maze, visited, newx, newy, path, ans);
+            path.remove(path.size() - 1);
+        }
+
+        // For Left
+        newx = srx;
+        newy = sry - 1;
+        if (isSafe(newx, newy, visited, maze)) {
+            path.add("L");
+            findPath(maze, visited, newx, newy, path, ans);
+            path.remove(path.size() - 1);
+        }
+
+        // For Right
+        newx = srx;
+        newy = sry + 1;
+        if (isSafe(newx, newy, visited, maze)) {
+            path.add("R");
+            findPath(maze, visited, newx, newy, path, ans);
+            path.remove(path.size() - 1);
+        }
+
+        // For Up
+        newx = srx - 1;
+        newy = sry;
+        if (isSafe(newx, newy, visited, maze)) {
+            path.add("U");
+            findPath(maze, visited, newx, newy, path, ans);
+            path.remove(path.size() - 1);
+        }
+
+        
+        visited[srx][sry] = 0;
+    }
+
+    private static boolean isSafe(int newx, int newy, int[][] visited, int[][] maze) {
+        return (newx >= 0 && newx < maze.length) && (newy >= 0 && newy < maze[0].length)
+                && visited[newx][newy] == 0 && maze[newx][newy] == 1;
+    }
+}
