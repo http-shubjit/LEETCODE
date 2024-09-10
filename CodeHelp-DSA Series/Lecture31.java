@@ -579,7 +579,7 @@ public class Lecture31 {
         Vector<String> ans = new Vector<>();
         int[][] visited = new int[maze.length][maze[0].length];
 
-        // Check if the starting point is valid
+        
         if (maze[srx][sry] == 1) {
             findPath(maze, visited, srx, sry, new ArrayList<String>(), ans);
         }
@@ -589,13 +589,13 @@ public class Lecture31 {
 
     private static void findPath(int[][] maze, int[][] visited, int srx, int sry, ArrayList<String> path,
             Vector<String> ans) {
-        // Check if we have reached the destination
+        
         if (srx == (maze.length - 1) && sry == (maze[0].length - 1)) {
-            ans.add(String.join("", path)); // Add the complete path to the answer
+            ans.add(String.join("", path)); 
             return;
         }
 
-        // Mark the cell as visited
+        
         visited[srx][sry] = 1;
 
         // For Down
