@@ -560,86 +560,104 @@
 // }
 
 //** Rat in a Maze Problem
-import java.util.ArrayList;
-import java.util.Vector;
+// import java.util.ArrayList;
+// import java.util.Vector;
 
-public class Lecture31 {
+// public class Lecture31 {
 
-    public static void main(String[] args) {
-        int[][] maze = {
-                { 1, 0, 0, 0 },
-                { 1, 1, 0, 1 },
-                { 1, 1, 0, 0 },
-                { 0, 1, 1, 1 }
-        };
+//     public static void main(String[] args) {
+//         int[][] maze = {
+//                 { 1, 0, 0, 0 },
+//                 { 1, 1, 0, 1 },
+//                 { 1, 1, 0, 0 },
+//                 { 0, 1, 1, 1 }
+//         };
 
-        int srx = 0; // Start row
-        int sry = 0; // Start column
+//         int srx = 0; // Start row
+//         int sry = 0; // Start column
 
-        Vector<String> ans = new Vector<>();
-        int[][] visited = new int[maze.length][maze[0].length];
-
-        
-        if (maze[srx][sry] == 1) {
-            findPath(maze, visited, srx, sry, new ArrayList<String>(), ans);
-        }
-
-        System.out.println(ans);
-    }
-
-    private static void findPath(int[][] maze, int[][] visited, int srx, int sry, ArrayList<String> path,
-            Vector<String> ans) {
-        
-        if (srx == (maze.length - 1) && sry == (maze[0].length - 1)) {
-            ans.add(String.join("", path)); 
-            return;
-        }
+//         Vector<String> ans = new Vector<>();
+//         int[][] visited = new int[maze.length][maze[0].length];
 
         
-        visited[srx][sry] = 1;
+//         if (maze[srx][sry] == 1) {
+//             findPath(maze, visited, srx, sry, new ArrayList<String>(), ans);
+//         }
 
-        // For Down
-        int newx = srx + 1;
-        int newy = sry;
-        if (isSafe(newx, newy, visited, maze)) {
-            path.add("D");
-            findPath(maze, visited, newx, newy, path, ans);
-            path.remove(path.size() - 1);
-        }
+//         System.out.println(ans);
+//     }
 
-        // For Left
-        newx = srx;
-        newy = sry - 1;
-        if (isSafe(newx, newy, visited, maze)) {
-            path.add("L");
-            findPath(maze, visited, newx, newy, path, ans);
-            path.remove(path.size() - 1);
-        }
-
-        // For Right
-        newx = srx;
-        newy = sry + 1;
-        if (isSafe(newx, newy, visited, maze)) {
-            path.add("R");
-            findPath(maze, visited, newx, newy, path, ans);
-            path.remove(path.size() - 1);
-        }
-
-        // For Up
-        newx = srx - 1;
-        newy = sry;
-        if (isSafe(newx, newy, visited, maze)) {
-            path.add("U");
-            findPath(maze, visited, newx, newy, path, ans);
-            path.remove(path.size() - 1);
-        }
+//     private static void findPath(int[][] maze, int[][] visited, int srx, int sry, ArrayList<String> path,
+//             Vector<String> ans) {
+        
+//         if (srx == (maze.length - 1) && sry == (maze[0].length - 1)) {
+//             ans.add(String.join("", path)); 
+//             return;
+//         }
 
         
-        visited[srx][sry] = 0;
-    }
+//         visited[srx][sry] = 1;
 
-    private static boolean isSafe(int newx, int newy, int[][] visited, int[][] maze) {
-        return (newx >= 0 && newx < maze.length) && (newy >= 0 && newy < maze[0].length)
-                && visited[newx][newy] == 0 && maze[newx][newy] == 1;
-    }
-}
+//         // For Down
+//         int newx = srx + 1;
+//         int newy = sry;
+//         if (isSafe(newx, newy, visited, maze)) {
+//             path.add("D");
+//             findPath(maze, visited, newx, newy, path, ans);
+//             path.remove(path.size() - 1);
+//         }
+
+//         // For Left
+//         newx = srx;
+//         newy = sry - 1;
+//         if (isSafe(newx, newy, visited, maze)) {
+//             path.add("L");
+//             findPath(maze, visited, newx, newy, path, ans);
+//             path.remove(path.size() - 1);
+//         }
+
+//         // For Right
+//         newx = srx;
+//         newy = sry + 1;
+//         if (isSafe(newx, newy, visited, maze)) {
+//             path.add("R");
+//             findPath(maze, visited, newx, newy, path, ans);
+//             path.remove(path.size() - 1);
+//         }
+
+//         // For Up
+//         newx = srx - 1;
+//         newy = sry;
+//         if (isSafe(newx, newy, visited, maze)) {
+//             path.add("U");
+//             findPath(maze, visited, newx, newy, path, ans);
+//             path.remove(path.size() - 1);
+//         }
+
+        
+//         visited[srx][sry] = 0;
+//     }
+
+//     private static boolean isSafe(int newx, int newy, int[][] visited, int[][] maze) {
+//         return (newx >= 0 && newx < maze.length) && (newy >= 0 && newy < maze[0].length)
+//                 && visited[newx][newy] == 0 && maze[newx][newy] == 1;
+//     }
+// }
+
+
+//**  Plus one
+
+// class Solution {
+//     public int[] plusOne(int[] digits) {
+//         for (int i = (digits.length - 1); i >= 0; i--) {
+//             if ((digits[i] + 1) != 10) {
+//                 digits[i] += 1;
+//                 return digits;
+//             }
+//             digits[i] = 0;
+//         }
+//         int[] output = new int[digits.length + 1];
+//         output[0] = 1;
+//         return output;
+//     }
+// }
