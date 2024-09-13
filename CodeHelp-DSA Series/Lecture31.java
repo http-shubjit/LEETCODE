@@ -689,3 +689,66 @@
 //         return ret.reverse().toString(); 
 //     }
 // }
+
+
+
+
+// FIndBinary trees 
+// numTrees(3)
+// |
+// |-- numTrees(0) * numTrees(2)  (i=1)
+// |   |
+// |   |-- numTrees(0)  --> returns 1
+// |   |
+// |   |-- numTrees(2)
+// |       |
+// |       |-- numTrees(0) * numTrees(1)  (i=1)
+// |       |   |
+// |       |   |-- numTrees(0) --> returns 1
+// |       |   |
+// |       |   |-- numTrees(1) --> returns 1
+// |       |
+// |       |-- numTrees(1) * numTrees(0)  (i=2)
+// |           |
+// |           |-- numTrees(1) --> returns 1
+// |           |
+// |           |-- numTrees(0) --> returns 1
+// |
+// |-- numTrees(1) * numTrees(1)  (i=2)
+// |   |
+// |   |-- numTrees(1) --> returns 1
+// |   |
+// |   |-- numTrees(1) --> returns 1
+// |
+// |-- numTrees(2) * numTrees(0)  (i=3)
+// |   |
+// |   |-- numTrees(2)
+// |   |   |
+// |   |   |-- numTrees(0) * numTrees(1)  (i=1)
+// |   |   |   |
+// |   |   |   |-- numTrees(0) --> returns 1
+// |   |   |   |
+// |   |   |   |-- numTrees(1) --> returns 1
+// |   |   |
+// |   |   |-- numTrees(1) * numTrees(0)  (i=2)
+// |   |       |
+// |   |       |-- numTrees(1) --> returns 1
+// |   |       |
+// |   |       |-- numTrees(0) --> returns 1
+// |   |
+// |   |-- numTrees(0) --> returns 1
+
+
+class Solution {
+    public int numTrees(int n) {
+
+        if (n <= 1)
+            return 1;
+        int ans = 0;
+        for (int i = 1; i <= n; i++) {
+            ans = ans + numTrees(i - 1) * numTrees(n - i);
+        }
+        return ans;
+
+    }
+}
