@@ -242,3 +242,13 @@
 //         }
 //     }
 // }
+
+class Solution {
+    public static void main(String[] args) {
+        int result = bulbSwitch(3);
+    }
+   
+    public static int bulbSwitch(int n) {
+        return (int) Math.sqrt(n);
+    }
+}
